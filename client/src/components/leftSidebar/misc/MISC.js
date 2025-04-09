@@ -39,14 +39,14 @@ function MISC() {
   });
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/visitors')
+    axios.get('https://visitor-eta.vercel.app/api/visitors')
       .then((response) => setTableData(response.data))
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/visitors/${id}`);
+      await axios.delete(`https://visitor-eta.vercel.app/api/visitors/${id}`);
       // Remove deleted visitor from table
       setTableData(prev => prev.filter(visitor => visitor._id !== id));
     } catch (error) {
@@ -64,7 +64,7 @@ function MISC() {
 
   const handleToggle = (entry, field) => {
     const updatedValue = !entry[field];
-    axios.patch(`http://localhost:5000/api/visitors/${entry._id}`, {
+    axios.patch(`https://visitor-eta.vercel.app/api/visitors/${entry._id}`, {
       [field]: updatedValue,
     })
     .then(() => {
@@ -84,7 +84,7 @@ function MISC() {
     setTableData(updatedData);
 
     updatedData.forEach((entry) => {
-      axios.patch(`http://localhost:5000/api/visitors/${entry._id}`, {
+      axios.patch(`https://visitor-eta.vercel.app/api/visitors/${entry._id}`, {
         [field]: value,
       }).catch((err) => console.error(`Error updating ${field} for ${entry.name}:`, err));
     });
@@ -99,7 +99,7 @@ function MISC() {
     try {
       if (visitorRecord) {
         // update existing record
-        await axios.post(`http://localhost:5000/api/visitors/${visitorRecord._id}/visitors`, {
+        await axios.post(`https://visitor-eta.vercel.app/api/visitors/${visitorRecord._id}/visitors`, {
           visitors,
         });
       } else {
