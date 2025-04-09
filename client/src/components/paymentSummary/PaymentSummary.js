@@ -13,7 +13,7 @@ function PaymentSummary({ record, onClose }) {
       const newRemaining = remainingAmount - Number(payAmount);
       const pendingAmount = newRemaining <= 0 ? 0 : newRemaining;
 
-      await axios.patch(`http://localhost:5000/api/visitors/${record._id}`, {
+      await axios.patch(`https://visitor-eta.vercel.app/api/visitors/${record._id}`, {
         pendingAmount,
         newPayment: {
           amount: Number(payAmount),
