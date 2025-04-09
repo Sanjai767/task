@@ -1,0 +1,65 @@
+/* Reset some basic elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Ensure the body and HTML element take up the full height */
+  html, body {
+    height: 100%; /* Full height for body and html */
+  }
+  
+  /* Full-screen container using CSS Grid */
+  .grid-container {
+    display: grid;
+    grid-template-columns: 25% 75%;  /* 25% for left sidebar, 75% for right sidebar */
+    grid-template-rows: auto 1fr;    /* auto for navigation, 1fr for main content */
+    height: 100vh; /* Ensure the grid container takes full viewport height */
+  }
+  
+  /* Left Sidebar */
+  .left-sidebar {
+    background-color: red;
+    color: black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%; /* Ensure the left sidebar fills the full height */
+  }
+  
+  .left-sidebar h4 {
+    margin-bottom: 20px;
+  }
+  
+  .left-sidebar .menu {
+    list-style: none;
+  }
+  
+  .left-sidebar .menu li {
+    margin: 10px 0;
+    color: black;
+  }
+  
+  /* Right Sidebar */
+  .right-sidebar {
+    display: grid;
+    grid-template-rows: auto 1fr; /* Navigation at top, main content at bottom */
+    height: 100%; /* Ensure the right sidebar fills the full height */
+  }
+  
+  /* Main Content Section */
+  .main-content {
+    padding: 20px;
+    height: 100%; /* Ensure the main content takes the full remaining height */
+  }
+  
+  .main-content h1 {
+    margin-bottom: 20px;
+  }
+  
+  .main-content p {
+    font-size: 18px;
+  }
+  
